@@ -1,0 +1,25 @@
+---
+- name: Install MySQL on Red Hat Enterprise Linux
+  hosts: all 
+  become: yes
+  gather_facts: no
+
+  tasks:
+    - name: Install MySQL Server
+      dnf:
+        name: mysql-server
+        state: present
+
+    - name: Debug message for MySQL installation status
+      debug:
+        msg: "MySQL installation on process.."
+
+    - name: Start MySQL service
+      service:
+        name: mysqld
+        state: started
+        enabled: yes
+
+    - name: Debug message for MySQL service status
+      debug:
+        msg: "MySQL service installation successfully."
