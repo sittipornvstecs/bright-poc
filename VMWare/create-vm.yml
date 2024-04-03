@@ -35,7 +35,7 @@
           iso_path: "[{{ datastore }}] {{ iso_path }}"
           #iso_path: "[SimpliVity-Datastore] ISO/rhel-baseos-9.1-x86_64-dvd.iso"
         networks:
-        - name: VM network
+        - name: VM Network
           dvswitch_name: "{{ dvswitch_name }}"
           vlan: "{{ vlan }}"
           type: dhcp
