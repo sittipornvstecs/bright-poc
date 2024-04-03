@@ -19,8 +19,8 @@
         state: poweredon
         guest_id: rhel8_64Guest
         disk:
-        - size_gb: 40
-          type: thin
+        - size_gb: "{{ size_gb }}"
+          type: "{{ disk_type }}"
           datastore: "{{ vcenter_datastore }}"
         hardware:
           memory_mb: "{{ memory_mb }}"
@@ -35,7 +35,7 @@
           iso_path: "[{{ datastore }}] {{ iso_path }}"
           #iso_path: "[SimpliVity-Datastore] ISO/rhel-baseos-9.1-x86_64-dvd.iso"
         networks:
-        - name: "{{ vm_network }}"
+        - name: VM network
           dvswitch_name: "{{ dvswitch_name }}"
           vlan: "{{ vlan }}"
           type: dhcp
