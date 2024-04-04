@@ -1,0 +1,19 @@
+---
+- hosts: all
+  become: yes
+  become_user: Administrator
+  become_method: runas
+
+  tasks:
+    - name: Run systeminfo command
+      win_command: systeminfo
+      register: system_info_output
+
+    - name: Extract OS Name and OS Version
+      set_fact:
+        os_name: "{{ system_info_output.stdout | regex_search('OS Name:\\s*(.*)') }}"
+        os_version: "{{ system_info_output.stdout | regex_search('OS Version:\\s*(.*)') }}"
+
+    - name: Display OS Name and OS Version
+      debug:
+        msg: "OS Name: {{ os_name }} | OS Version: {{ os_version }}"
