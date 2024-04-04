@@ -9,20 +9,20 @@
 
     - name: Create VM from template
       community.vmware.vmware_guest:
-        hostname: "{{ vcenter_hostname }}"
-        username: "{{ vcenter_username }}"
+        hostname: "m79.cloud.ksc.net"
+        username: "yuttanah"
         password: "{{ vcenter_password }}"
         validate_certs: no
-        datacenter: "{{ datacenter_name }}"
-        folder: "{{ datacenter_name }}/vm/"
-        datastore: "{{ vcenter_datastore }}"
+        datacenter: "MTG"
+        folder: "MTG/vm/"
+        datastore: "vSanDatastore"
         name: "{{ guest_name }}"
         template: "{{ template_name }}"
         state: present
         hardware:
-          memory_mb: "{{ memory_mb }}"
-          num_cpus: "{{ num_cpus }}"
-          num_cpu_cores_per_socket: "{{ num_cpu_cores_per_socket }}"
+          memory_mb: "4096"
+          num_cpus: "4"
+          num_cpu_cores_per_socket: "4"
           scsi: paravirtual
         wait_for_ip_address: true
       delegate_to: localhost
