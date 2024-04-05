@@ -3,13 +3,14 @@
   become: yes
   become_user: Administrator
   become_method: runas
+  gather_facts: no
 
   tasks:
     - name: Install SQL Server Express 2022 using Chocolatey
       win_chocolatey:
         name: sql-server-express
-        #version: '2022.16.0.1000'
-        #source: http://internal/odata/repo
+        version: '2022.16.0.1000'
+        source: http://internal/odata/repo
         state: present
         params:
           InstallDir: 'C:\Program Files\Microsoft SQL Server'
