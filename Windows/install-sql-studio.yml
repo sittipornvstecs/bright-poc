@@ -17,6 +17,11 @@
         name: sql-server-management-studio
         state: present
 
+    #- name: Ensure SQL Server Service is running
+      #win_service:
+        #name: MSSQL$SQLEXPRESS
+        #state: started
+
     - name: Debug message for MySQL installation status
       debug:
         msg: "Microsoft SQL Management Studio installation successfully."
