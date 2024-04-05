@@ -18,7 +18,7 @@
           AGTSVCACCOUNT: 'NT AUTHORITY\NETWORK SERVICE'
           SQLSYSADMINACCOUNTS: 'BUILTIN\Administrators'
           SECURITYMODE: 'SQL'
-          SAPWD: 'YourStrongPassword'
+          SAPWD: '{{ sa_password }}'
 
     - name: Start SQL Server service
       win_service:
