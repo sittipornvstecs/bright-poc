@@ -10,7 +10,7 @@
       win_chocolatey:
         name: sql-server-express
         version: '2022.16.0.1000'
-        source: https://chocolatey.org/api/v2/
+        source: https://github.com/sittipornvstecs/bright-poc
         state: present
         #params:
           #InstallDir: 'C:\Program Files\Microsoft SQL Server'
