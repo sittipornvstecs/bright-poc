@@ -13,14 +13,14 @@
         source: hhttps://community.chocolatey.org/api/v2/
         state: present
         params:
-          #InstallDir: 'C:\Program Files\Microsoft SQL Server'
-          #acceptlicense: yes
-          #InstanceName: 'SQLEXPRESS'
-          #Features: 'SQLENGINE,Replication,FullText'
-          #SQLSVCACCOUNT: 'NT AUTHORITY\NETWORK SERVICE'
-          #AGTSVCACCOUNT: 'NT AUTHORITY\NETWORK SERVICE'
-          #SQLSYSADMINACCOUNTS: 'BUILTIN\Administrators'
-          #SECURITYMODE: 'SQL'
+          InstallDir: 'C:\Program Files\Microsoft SQL Server'
+          acceptlicense: yes
+          InstanceName: 'SQLEXPRESS'
+          Features: 'SQLENGINE,Replication,FullText'
+          SQLSVCACCOUNT: 'NT AUTHORITY\NETWORK SERVICE'
+          AGTSVCACCOUNT: 'NT AUTHORITY\NETWORK SERVICE'
+          SQLSYSADMINACCOUNTS: 'BUILTIN\Administrators'
+          SECURITYMODE: 'SQL'
           SAPWD: '{{ sa_password }}'
         
     - name: Debug message for MySQL installation status
