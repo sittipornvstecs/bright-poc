@@ -9,18 +9,18 @@
     - name: Install SQL Server Express 2022 using Chocolatey
       win_chocolatey:
         name: sql-server-express
-        version: '2022.16.0.1000'
-        source: hhttps://community.chocolatey.org/api/v2/
+        #version: '2022.16.0.1000'
+        #source: hhttps://community.chocolatey.org/api/v2/
         state: present
         params:
-          InstallDir: 'C:\Program Files\Microsoft SQL Server'
+          #InstallDir: 'C:\Program Files\Microsoft SQL Server'
           acceptlicense: yes
-          InstanceName: 'SQLEXPRESS'
-          Features: 'SQLENGINE,Replication,FullText'
-          SQLSVCACCOUNT: 'NT AUTHORITY\NETWORK SERVICE'
-          AGTSVCACCOUNT: 'NT AUTHORITY\NETWORK SERVICE'
-          SQLSYSADMINACCOUNTS: 'BUILTIN\Administrators'
-          SECURITYMODE: 'SQL'
+          #InstanceName: 'SQLEXPRESS'
+          #Features: 'SQLENGINE,Replication,FullText'
+          #SQLSVCACCOUNT: 'NT AUTHORITY\NETWORK SERVICE'
+          #AGTSVCACCOUNT: 'NT AUTHORITY\NETWORK SERVICE'
+          #SQLSYSADMINACCOUNTS: 'BUILTIN\Administrators'
+          #SECURITYMODE: 'SQL'
           SAPWD: '{{ sa_password }}'
         
     - name: Debug message for MySQL installation status
