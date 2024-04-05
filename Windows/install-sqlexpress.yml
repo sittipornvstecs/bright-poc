@@ -6,6 +6,10 @@
   gather_facts: no
 
   tasks:
+    - name: Debug message for MySQL installation status
+      debug:
+        msg: "MSSQLEXPRESS installation on process.."
+
     - name: Install SQL Server Express 2022 using Chocolatey
       win_chocolatey:
         name: sql-server-express
@@ -23,9 +27,7 @@
           #SECURITYMODE: 'SQL'
           #SAPWD: '{{ sa_password }}'
         
-    - name: Debug message for MySQL installation status
-      debug:
-        msg: "MSSQLEXPRESS installation on process.."
+    
 
     #- name: Start SQL Server service
       #win_service:
@@ -33,6 +35,6 @@
         #start_mode: auto
         #state: started
 
-    #- name: Debug message for MySQL service status
-      #debug:
-        #msg: "MSSQLEXPRESS service installation successfully."
+    - name: Debug message for MySQL service status
+      debug:
+        msg: "MSSQLEXPRESS service installation successfully."
