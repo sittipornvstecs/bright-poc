@@ -1,4 +1,21 @@
-- name: Install all updates and reboot as many times as needed
-  ansible.windows.win_updates:
-    category_names: '*'
-    reboot: true
+---
+- hosts: localhost
+ # vars:
+  #  vcenter: "172.18.0.60"
+   # username: "administrator@vsphere.local"
+    #password: "xP@ssw0rd@123"
+  tasks:
+  
+    - name: snapshots
+      community.vmware.vmware_guest_snapshot:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        validate_certs: no
+        datacenter: "{{ datacenter_name }}"
+        folder: "/{{ datacenter_name }}/vm/"
+        name: "{{ guest_name }}"
+        state: present
+        snapshot_name: "Ansible-Prepatch-Snapshot"
+        description: "The server is being Snapshot process.."
+      delegate_to: localhost
