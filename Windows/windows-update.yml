@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: yes
+  become_user: Administrator
+  become_method: runas
+  gather_facts: no
+
+  tasks:
+
+    - name: Debug message for MySQL installation status
+      debug:
+        msg: "Windows Server Updates on process.."
+
+    - name: Install Chocolatey Windows Update Extension using Chocolatey
+      win_chocolatey:
+        name: chocolatey-windowsupdate.extension
+        state: present
+
+    - name: Debug message for MySQL installation status
+      debug:
+        msg: "Windows Server Updates successfully."
