@@ -1,0 +1,7 @@
+---
+- hosts: all
+  tasks:
+    - name: Install SQL Server Express using Chocolatey
+      win_chocolatey:
+        name: sql-server-express
+        state: present
