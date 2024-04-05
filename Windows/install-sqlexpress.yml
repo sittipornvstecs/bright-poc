@@ -19,7 +19,7 @@
           AGTSVCACCOUNT: 'NT AUTHORITY\NETWORK SERVICE'
           SQLSYSADMINACCOUNTS: 'BUILTIN\Administrators'
           SECURITYMODE: 'SQL'
-          SAPWD: 'P@ssw0rd'
+          SAPWD: "P@ssw0rd"
         
     - name: Debug message for MySQL installation status
       debug:
