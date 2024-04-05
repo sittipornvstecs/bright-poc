@@ -27,12 +27,12 @@
       debug:
         msg: "MSSQLEXPRESS installation on process.."
 
-    - name: Start SQL Server service
-      win_service:
-        name: MSSQL$SQLEXPRESS
-        start_mode: auto
-        state: started
+    #- name: Start SQL Server service
+      #win_service:
+        #name: MSSQL$SQLEXPRESS
+        #start_mode: auto
+        #state: started
 
-    - name: Debug message for MySQL service status
-      debug:
-        msg: "MSSQLEXPRESS service installation successfully."
+    #- name: Debug message for MySQL service status
+      #debug:
+        #msg: "MSSQLEXPRESS service installation successfully."
