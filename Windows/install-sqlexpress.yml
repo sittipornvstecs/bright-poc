@@ -10,7 +10,7 @@
       win_chocolatey:
         name: sql-server-express
         #version: '2022.16.0.1000'
-        source: 'http://internal/odata/repo'
+        #source: 'http://internal/odata/repo'
         state: present
         params:
           InstallDir: 'C:\Program Files\Microsoft SQL Server'
