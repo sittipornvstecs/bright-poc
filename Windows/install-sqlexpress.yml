@@ -9,8 +9,8 @@
     - name: Install SQL Server Express 2022 using Chocolatey
       win_chocolatey:
         name: sql-server-express
-        #version: '2022.16.0.1000'
-        #source: hhttps://community.chocolatey.org/api/v2/
+        version: '2022.16.0.1000'
+        source: https://community.chocolatey.org/api/v2/
         state: present
         params:
           #InstallDir: 'C:\Program Files\Microsoft SQL Server'
