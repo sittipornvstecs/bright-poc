@@ -1,0 +1,22 @@
+---
+- hosts: all
+  become: yes
+  become_user: Administrator
+  become_method: runas
+  gather_facts: no
+  
+  tasks:
+
+    - name: Debug message for MySQL installation status
+      debug:
+        msg: "Microsoft SQL Management Studio installation on process.."
+
+    
+    - name: Install SQL Server Management Studio using Chocolatey
+      win_chocolatey:
+        name: sql-server-management-studio
+        state: present
+
+    - name: Debug message for MySQL installation status
+      debug:
+        msg: "Microsoft SQL Management Studio installation successfully."
