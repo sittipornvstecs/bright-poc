@@ -10,3 +10,5 @@
       win_chocolatey:
         name: sql-server-management-studio
         state: present
+        params:
+          acceptlicense: yes
