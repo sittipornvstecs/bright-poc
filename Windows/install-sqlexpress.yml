@@ -8,7 +8,7 @@
   tasks:
     - name: Install SQL Server Express 2022 using Chocolatey
       win_chocolatey:
-        name: sql-server-express
+        name: sql-server-express 2022.16.0.1000
         #version: '2022.16.0.1000'
         source: https://chocolatey.org/api/v2/
         state: present
