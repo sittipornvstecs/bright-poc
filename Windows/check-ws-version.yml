@@ -1,11 +1,11 @@
 ---
-- hosts: all
+- hosts: localhost
   become: yes
   become_user: Administrator
   become_method: runas
 
   tasks:
-  
+
     - name: Run systeminfo command
       win_command: systeminfo
       register: system_info_output
